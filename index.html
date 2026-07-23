@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DriveGuard — SHA-256 Drive Integrity &amp; File Manager</title>
+<meta name="description" content="Download DriveGuard: a native Windows tool for SHA-256 drive integrity checking, duplicate/corruption detection, and a verified file manager.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="masthead__row">
+      <svg class="seal" viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="32" r="29" />
+        <path d="M20 33.5 27.5 41 44 23" />
+      </svg>
+      <div>
+        <p class="eyebrow">Windows Desktop Utility</p>
+        <h1 class="masthead__title">DriveGuard</h1>
+      </div>
+    </div>
+    <p class="masthead__desc">
+      SHA-256 drive integrity checking, duplicate &amp; corruption detection, and a
+      file manager that acts on files at their original location — reveal, rename,
+      copy/backup, verified replace, or recoverable delete.
+    </p>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <a class="btn btn--primary btn--lg"
+         href="https://github.com/tukaramhankare/DriveGuard-File-Duplicate-Finder/raw/refs/heads/main/DriveGuard.exe"
+         download>
+        Download DriveGuard.exe
+      </a>
+      <p class="hero__meta">v1.2 &middot; Windows &middot; 9.06 MB &middot; unsigned build</p>
+      <a class="link-quiet" href="https://github.com/tukaramhankare/DriveGuard-File-Duplicate-Finder">View source on GitHub →</a>
+
+      <div class="callout">
+        <strong>First run:</strong> Windows SmartScreen may flag this because the build
+        isn't code-signed — that's expected for an independent, unsigned executable.
+        Choose <em>More info → Run anyway</em>. The app also requests admin elevation
+        on launch (<code>UAC</code>), needed to scan and act on files outside your own
+        user folders.
+      </div>
+    </section>
+
+    <section class="features">
+      <h2 class="section-title">What it does</h2>
+      <ul class="feature-grid">
+        <li>
+          <h3>SHA-256 integrity scan</h3>
+          <p>Point it at a drive, folder, or media device — every file gets hashed in one pass.</p>
+        </li>
+        <li>
+          <h3>Duplicates &amp; corruption</h3>
+          <p>Groups identical files, flags unreadable/empty files, signature-vs-extension mismatches, and files whose hash changed since the last scan.</p>
+        </li>
+        <li>
+          <h3>Export / Import SHA-256</h3>
+          <p>Save a scan to CSV and re-verify it later against the same files, reusing the same hashing and grouping logic.</p>
+        </li>
+        <li>
+          <h3>Act at the original location</h3>
+          <p>Right-click or long-press: reveal, rename, copy/backup (hash-verified, collision-safe), replace (verified, auto-backed-up), or delete to a recoverable quarantine folder.</p>
+        </li>
+        <li>
+          <h3>Full operation log</h3>
+          <p>Every action recorded, with a one-click Clear Log that only touches the log — never your files.</p>
+        </li>
+        <li>
+          <h3>Dark &amp; Light themes</h3>
+          <p>Toggle at runtime.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="source">
+      <h2 class="section-title">Build from source</h2>
+      <p class="section-hint">Zero external Python dependencies — standard library only.</p>
+
+      <div class="code-block">
+        <pre><code id="clone-cmd">git clone https://github.com/tukaramhankare/DriveGuard-File-Duplicate-Finder.git
+cd DriveGuard-File-Duplicate-Finder
+python DriveGuard.py</code></pre>
+        <button class="copy-btn" type="button" data-copy-target="clone-cmd">Copy</button>
+      </div>
+
+      <p class="section-hint">To build your own .exe:</p>
+      <div class="code-block">
+        <pre><code id="pyinstaller-cmd">pyinstaller --onefile --noconsole --clean --hidden-import=tkinter --uac-admin --name DriveGuard DriveGuard.py</code></pre>
+        <button class="copy-btn" type="button" data-copy-target="pyinstaller-cmd">Copy</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>DriveGuard — Apache License 2.0 — Tukaram Hankare, Farmer, Coder &amp; Web Developer, Solapur, Maharashtra, India</p>
+    <p><a href="https://github.com/tukaramhankare">github.com/tukaramhankare</a></p>
+  </footer>
+
+<script src="app.js"></script>
+</body>
+</html>
